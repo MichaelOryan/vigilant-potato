@@ -1,16 +1,21 @@
 template <class T> void BubbleSortFront(T & t)
 {
-    auto wall = t.rbegin();
-    while(wall != t.rend())
+    auto wall = t.end();
+    while(wall != t.begin())
     {
-        auto new_wall = wall;
-        for(auto iter = t.rend() - 1; iter != wall; --iter)
+        auto next = t.begin();
+        next++;
+        auto new_wall = t.begin();
+        auto current = t.begin();
+        while(next != wall)
         {
-            if(*iter > *(iter - 1))
+            if(*current > *next)
             {
-                new_wall = iter - 1;
-                std::swap(*iter, *(iter - 1));
+                new_wall = next;
+                std::swap(*iter, *next);
             }
+            current++;
+            next++;
         }
         
         wall = new_wall;
