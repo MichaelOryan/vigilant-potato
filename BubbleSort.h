@@ -1,7 +1,7 @@
 template <class T> void BubbleSortFront(T & t)
 {
     auto wall = t.rbegin();
-    while(wall < t.rend())
+    while(wall != t.rend())
     {
         auto new_wall = wall;
         for(auto iter = t.rend() - 1; iter != wall; --iter)
@@ -21,7 +21,7 @@ template <class T> void BubbleSortFront(T & t)
 template <class T> void BubbleSortBack(T & t)
 {
     auto wall = t.begin();
-    while(wall < t.end())
+    while(wall != t.end())
     {
         auto new_wall = wall;
         for(auto iter = t.end() - 1; iter != wall; --iter)
