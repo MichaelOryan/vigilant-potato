@@ -1,12 +1,12 @@
-template <class T> void BubbleSort(T & t)
+template <class T> void BubbleSort(T & begin, T & end)
 {
-    auto wall = t.end();
-    while(wall != t.begin())
+    auto wall = end;
+    while(wall != begin)
     {
-        auto next = t.begin();
+        auto next = begin;
         next++;
-        auto new_wall = t.begin();
-        auto current = t.begin();
+        auto new_wall = begin;
+        auto current = begin;
         while(next != wall)
         {
             if(*current > *next)
