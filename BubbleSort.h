@@ -9,7 +9,7 @@ template <class T> void BubbleSort(T & begin, T & end)
         auto current = begin;
         while(next != wall)
         {
-            if(*current > *next)
+            if(*next < *current)
             {
                 new_wall = next;
                 std::swap(*iter, *next);
