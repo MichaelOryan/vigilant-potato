@@ -1,23 +1,21 @@
-template <class T> void BubbleSort(T & begin, T & end)
+template <class T> void BubbleSort(T & t)
 {
-    auto wall = end;
-    while(wall != begin)
+    auto sorted = t.end();
+    while( !(sorted == t.begin()) )
     {
-        auto next = begin;
+        auto next = t.begin();
         next++;
-        auto new_wall = begin;
-        auto current = begin;
-        while(next != wall)
+        auto possible_sorted = t.begin();
+        auto current = t.begin();
+        while( !(next == sorted) )
         {
             if(*next < *current)
             {
-                new_wall = next;
-                std::swap(*iter, *next);
+                possible_sorted = next;
+                std::swap(*current, *next);
             }
             current++;
             next++;
         }
-        
-        wall = new_wall;
+        sorted = possible_sorted;
     }
-}
