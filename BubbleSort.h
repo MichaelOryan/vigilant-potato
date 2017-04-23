@@ -1,15 +1,15 @@
-template <class T> void BubbleSort(T & t)
+template <class T> void BubbleSort(const T & begin, const T & end, bool reverse = false)
 {
-    auto sorted = t.end();
-    while( !(sorted == t.begin()) )
+    auto sorted = end;
+    while( !(sorted == begin) )
     {
-        auto next = t.begin();
+        auto next = begin;
         next++;
-        auto last_swapped = t.begin();
-        auto current = t.begin();
+        auto last_swapped = begin;
+        auto current = begin;
         while( !(next == sorted) )
         {
-            if(*next < *current)
+            if(reverse ^ (*next < *current) )
             {
                 last_swapped = next;
                 std::swap(*current, *next);
@@ -20,3 +20,4 @@ template <class T> void BubbleSort(T & t)
         sorted = last_swapped;
     }
 }
+
