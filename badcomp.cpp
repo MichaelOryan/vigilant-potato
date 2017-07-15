@@ -1,3 +1,7 @@
+/*
+    I think I coded this as a cleaner way or c++ way of doing something not so great on /r/learnprogramming
+*/
+
 // Bad compression of string
 // Still it uses c++ style code rather than c so that's a plus
 #include <iostream>
